@@ -10,14 +10,14 @@
     <div class="selectSlide d-flex mx-4">
       <div
         class="d-flex align-items-center mx-1"
-        v-for="(slide, i) in slides"
+        v-for="(slide, i) in new Array(numOfSlides)"
         :key="i"
       >
         <input type="radio" name="slide" id="slide_1" class="d-none" />
         <label
           for="slide_1"
           :class="activeSlide == i && 'active'"
-          @click="changePosition(i)"
+          @click="changeSlide(i)"
         ></label>
       </div>
     </div>
@@ -32,42 +32,23 @@
 </template>
 
 <script>
-import Vue from "Vue";
-
 export default {
   props: ["changeSlide", "numOfSlides", "activeSlide"],
   data() {
-    return {
-      slides: [
-        { isActive: true },
-        { isActive: false },
-        { isActive: false },
-        { isActive: false },
-      ],
-    };
+    return {};
   },
   methods: {
-    changePosition(num) {
-      for (let i = 0; i < this.numOfSlides; i++) {
-        if (num == i) {
-          Vue.set(this.slides, i, { isActive: true });
-          this.changeSlide(num);
-        } else {
-          Vue.set(this.slides, i, { isActive: false });
-        }
-      }
-    },
     changeLeft() {
       let current = this.activeSlide;
 
       if (current > 0 && current < this.numOfSlides) {
-        this.changePosition(current - 1);
+        this.changeSlide(current - 1);
       }
     },
     changeRight() {
       let current = this.activeSlide;
       if (current >= 0 && current < this.numOfSlides - 1) {
-        this.changePosition(current + 1);
+        this.changeSlide(current + 1);
       }
     },
   },
