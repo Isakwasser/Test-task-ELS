@@ -268,7 +268,7 @@ button:active {
 }
 
 .is-invalid {
-  animation: error 0.5s;
+  /* animation: error 0.5s; */
 }
 
 @keyframes error {

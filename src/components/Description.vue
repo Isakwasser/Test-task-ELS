@@ -51,7 +51,7 @@ div {
 }
 .logo-img img {
   width: 90%;
-  animation: logo 10s linear infinite;
+  /* animation: logo 10s linear infinite; */
 }
 @keyframes logo {
   from {

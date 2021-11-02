@@ -166,9 +166,9 @@ export default {
   position: relative;
 }
 .item:hover {
-  box-shadow: 0 20px 30px var(--color1);
-  transform: translateY(-15px);
-  animation: itemGoing 2s infinite;
+  /* box-shadow: 0 20px 30px var(--color1); */
+  /* transform: translateY(-15px); */
+  /* animation: itemGoing 2s infinite; */
 }
 
 @keyframes itemGoing {
